@@ -69,9 +69,7 @@ Evaluation Metrics:
 ```
 ├── Dataset/
 ├── Notebook/
-├── Images/
-├── README.md
-└── requirements.txt
+└── README.md
 ```
 
 ## Author
