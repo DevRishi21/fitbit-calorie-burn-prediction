@@ -5,7 +5,7 @@ import joblib
 
 # PAGE CONFIGURATION
 st.set_page_config(
-    page_title="Fitbit Workout Analytics",
+    page_title="Fitbit",
     page_icon="🏋️",
     layout="wide"
 )
@@ -92,17 +92,15 @@ except Exception as e:
     st.stop()
 
 # TITLE
-st.title("🏋️ Fitbit Workout Analytics")
+st.title("Fitbit Workout Analytics")
 
 st.markdown(
     """
-    This application uses Machine Learning to:
+    This application uses Machine Learning Model to:
 
     - 🔥 Predict calories burned during a workout
     - 📊 Identify workout patterns using clustering
 
-    The application uses the trained models saved from the
-    Fitbit Machine Learning project.
     """
 )
 
@@ -113,8 +111,8 @@ st.sidebar.title("Navigation")
 page = st.sidebar.radio(
     "Select Application",
     [
-        "🔥 Calorie Prediction",
-        "📊 Workout Pattern Clustering"
+        "Calorie Prediction",
+        "Workout Pattern Detection"
     ]
 )
 
@@ -405,9 +403,9 @@ def create_model_dataframe(inputs):
     return input_df
 
 # CALORIE PREDICTION
-if page == "🔥 Calorie Prediction":
+if page == "Calorie Prediction":
 
-    st.header("🔥 Calories Burned Prediction")
+    st.header("Calculate Calories Burned")
 
     st.write(
         "Enter the workout details below to predict the "
@@ -419,7 +417,7 @@ if page == "🔥 Calorie Prediction":
     st.divider()
 
     predict_button = st.button(
-        "🔥 Predict Calories Burned",
+        "Predict Calories Burned",
         type="primary",
         use_container_width=True
     )
@@ -502,7 +500,7 @@ if page == "🔥 Calorie Prediction":
 # WORKOUT PATTERN CLUSTERING
 # ============================================================
 
-elif page == "📊 Workout Pattern Clustering":
+elif page == "Workout Pattern Detection":
 
     st.header("📊 Workout Pattern Clustering")
 
@@ -692,23 +690,23 @@ elif page == "📊 Workout Pattern Clustering":
         # PCA coordinates
         # ----------------------------------------------------
 
-        st.subheader("PCA Representation")
+        # st.subheader("PCA Representation")
 
-        pca_col1, pca_col2 = st.columns(2)
+        # pca_col1, pca_col2 = st.columns(2)
 
-        with pca_col1:
+        # with pca_col1:
 
-            st.metric(
-                "Principal Component 1",
-                f"{pca_data[0][0]:.3f}"
-            )
+        #     st.metric(
+        #         "Principal Component 1",
+        #         f"{pca_data[0][0]:.3f}"
+        #     )
 
-        with pca_col2:
+        # with pca_col2:
 
-            st.metric(
-                "Principal Component 2",
-                f"{pca_data[0][1]:.3f}"
-            )
+        #     st.metric(
+        #         "Principal Component 2",
+        #         f"{pca_data[0][1]:.3f}"
+        #     )
 
 
 # ============================================================
